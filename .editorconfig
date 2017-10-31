@@ -1,0 +1,35 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+root = true
+
+[src/**.{ts,tsx,js,jsx,json,html,css,less,scss,sass}]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[config/**.{ts,tsx,js,jsx,json,html,css,less,scss,sass}]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[{tsconfig.json,index.js,index.d.ts,.tsfmt.json,tslint.json}]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[{package.json,.editorconfig}]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true

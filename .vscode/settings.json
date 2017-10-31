@@ -1,0 +1,22 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#FFADDB"
+    },
+    "files.exclude": {
+        "**/*.js": { "when": "$(basename).ts" },
+        "**/*.js.map": true,
+        "packages/**/src/lib/**/*.d.ts": true,
+        "packages/**/src/app/**/*.d.ts": true,
+        ".cache-loader": true
+    },
+    "search.exclude": {
+        "node_modules": true,
+        "**/*.js": { "when": "$(basename).ts" },
+        "**/*.js.map": true,
+        "packages/**/src/lib/**/*.d.ts": true,
+        "packages/**/src/app/**/*.d.ts": true,
+        ".cache-loader": true,
+        "dist": true
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib"
+}

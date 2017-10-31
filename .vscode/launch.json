@@ -1,0 +1,81 @@
+{
+    // Use IntelliSense to find out which attributes exist for node debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch API (from WebPack)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/dist/main.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "sourceMaps": true,
+            "smartStep": true
+        },
+        {
+            "name": "Launch API (last build)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/app/index",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "sourceMaps": true,
+            "smartStep": true
+        },
+        {
+            "name": "Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+            "stopOnEntry": false,
+            "args": ["--runInBand"],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": { "NODE_ENV": "test" },
+            "sourceMaps": true,
+            "smartStep": true
+        },
+        {
+            "name": "Jest Only My Test",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+            "stopOnEntry": false,
+            "args": ["--runInBand", "only-my-test"],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "sourceMaps": true,
+            "smartStep": true,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "ONLY_MY_TESTS": "true",
+                "NODE_ENV": "test"
+            }
+        }
+    ]
+}
