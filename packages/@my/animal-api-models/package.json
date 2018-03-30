@@ -1,13 +1,5 @@
 {
   "name": "@my/animal-api-models",
-  "version": "1.5.0",
-  "dependencies": {
-    "class-transformer": "^0.1.8",
-    "class-validator": "^0.7.3"
-  },
-  "devDependencies": {
-    "@types/node": "^8.0.28",
-    "typescript": "^2.5.2"
-  }
+  "version": "1.5.0"
 }
 
