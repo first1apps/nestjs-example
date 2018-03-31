@@ -7,7 +7,6 @@ import * as config from 'config';
 import { Photo } from './entities';
 
 const dbConnection: any = config.get('dbConnection'); // TODO This should come from the AppConfigService but dunno how
-console.log(dbConnection);
 
 const providers = [DbService];
 

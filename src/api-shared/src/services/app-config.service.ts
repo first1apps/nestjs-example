@@ -7,6 +7,7 @@ export class AppConfigService {
   appDescription = this.config.get<string>('appDescription');
   appVersion = this.config.get<string>('appVersion');
   port = +this.config.get<number | string>('port');
+  jwtSecret = this.config.get<string>('jwtSecret');
 
   dbConnection = {
     host: this.config.get<string>('dbConnection.host'),

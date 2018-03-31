@@ -1,4 +1,5 @@
 {
+    "jwtSecret": "tau-wau-to-the-bau-wau-wau",
     "dbConnection": {
         "host": "localhost",
         "port": "5432",

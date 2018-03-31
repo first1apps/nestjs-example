@@ -10,6 +10,11 @@
     [x] Simple DI
     [ ] Transactions
 [ ] Authentication
+    [x] Proof of concept
+    [ ] Works with Swagger UI
+    [ ] Reads from datbase
+    [ ] Is it's own module
+[ ] CORS
 [ ] class-transformer
 [ ] class-validator
 

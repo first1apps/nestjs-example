@@ -29,7 +29,7 @@
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/start-dev.js",
-            "stopOnEntry": false,
+            "stopOnEntry": true,
             "args": [],
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,

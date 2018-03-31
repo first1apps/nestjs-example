@@ -1,14 +1,13 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { AppConfigService } from './services';
-import { IConfig } from 'config';
+import * as config from 'config';
 
-@Module({})
+const configProvider = { provide: "ConfigToken", useValue: config };
+const jwtSecretProvider = { provide: "JwtSecretToken", useValue: "asdfasdfafasasdf" };
+
+@Module({
+    components: [AppConfigService, configProvider, jwtSecretProvider],
+    exports: [AppConfigService, jwtSecretProvider],
+})
 export class ApiSharedModule {
-  static rootProviders(config: IConfig): any[] {
-    const rootProviders = [
-      AppConfigService,
-      { provide: 'ConfigToken', useValue: config },
-    ];
-    return rootProviders;
-  }
 }

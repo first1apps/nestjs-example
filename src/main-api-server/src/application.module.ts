@@ -5,11 +5,12 @@ import { AnimalModule } from '@my/animal-api-server';
 import * as config from 'config';
 import { DbModule } from '@my/db';
 import { RequestContext } from '@my/api-shared';
+import { AuthModule } from '@my/auth-api';
 import { ZoneMiddleware } from 'nestjs-zone';
+
 @Module({
-  imports: [AnimalModule, DbModule],
-  controllers: [],
-  components: [...ApiSharedModule.rootProviders(config)],
+  imports: [AnimalModule, AuthModule, DbModule, ApiSharedModule],
+  exports: [ApiSharedModule],
 })
 export class ApplicationModule implements NestModule {
   configure(consumer: MiddlewaresConsumer) {
