@@ -15,16 +15,8 @@ packges/@*/*/node_modules
 # Build
 .cache-loader
 /dist
-packages/*/src/**/*.js
-packages/*/src/**/*.js.map
-packages/*/src/app/**/*.d.ts
-packages/*/src/lib/**/*.d.ts
-packages/*/src/__tests__/**/*.d.ts
-packages/@*/*/src/**/*.js
-packages/@*/*/src/**/*.js.map
-packages/@*/*/src/app/**/*.d.ts
-packages/@*/*/src/lib/**/*.d.ts
-packages/@*/*/src/__tests__/**/*.d.ts
+packages/**/*.js
+packages/**/*.js.map
 
 # Tests
 /test

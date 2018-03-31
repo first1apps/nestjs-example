@@ -1,3 +1,3 @@
 "use strict";
 require('ts-node/register');
-require('./start');
+require('./start-dev');

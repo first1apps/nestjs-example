@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ApiSharedModule } from '@my/api-shared';
 import { AnimalModule } from '@my/animal-api-server';
-import { sharedServicesForRoot } from '@my/api-shared';
 import * as config from 'config';
+import { DbModule } from '@my/db';
 
 @Module({
-  imports: [AnimalModule],
+  imports: [AnimalModule, DbModule],
   controllers: [],
-  components: [...sharedServicesForRoot(), { provide: 'ConfigToken', useValue: config }],
+  components: [...ApiSharedModule.rootProviders(config)],
 })
 export class ApplicationModule {}
