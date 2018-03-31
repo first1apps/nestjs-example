@@ -3,5 +3,5 @@
     "appDescription": "An example application utilizing NestJS.",
     "appVersion": "0.1.0",
     "port": 3000,
-    "defaultSessionMinutes": 15
+    "defaultSessionExpiresIn": 15
 }

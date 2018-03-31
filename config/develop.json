@@ -1,6 +1,6 @@
 {
     "jwtSecret": "tau-wau-to-the-bau-wau-wau",
-    "defaultSessionMinutes": 480,
+    "defaultSessionExpiresIn": 480,
     "allowDbStructureSync": true,
     "dbConnection": {
         "host": "localhost",

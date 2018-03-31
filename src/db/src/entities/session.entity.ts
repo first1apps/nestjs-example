@@ -11,13 +11,16 @@ export class Session {
   isValid: boolean = false;
 
   @Column('int4', { nullable: false })
-  lifeSpanMinutes: number = 0;
+  expiresIn: number = 0;
 
   @Column('int4', { nullable: false })
   hits: number = 0;
 
   @Column('timestamptz', { nullable: false })
   createdAt: Date;
+
+  @Column('timestamptz', { nullable: true })
+  invalidatedAt: Date | null = null;
 
   @Column('timestamptz', { nullable: false })
   lastTouch: Date;

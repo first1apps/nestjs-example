@@ -8,7 +8,7 @@ export class AppConfigService {
   appVersion = this.config.get<string>('appVersion');
   port = +this.config.get<number | string>('port');
   jwtSecret = this.config.get<string>('jwtSecret');
-  defaultSessionMinutes = +this.config.get<number | string>('defaultSessionMinutes');
+  defaultSessionExpiresIn = +this.config.get<number | string>('defaultSessionExpiresIn');
   allowDbStructureSync = this.config.has('allowDbStructureSync') && this.config.get<boolean>('allowDbStructureSync') === true;
 
   dbConnection = {

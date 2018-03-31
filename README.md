@@ -22,10 +22,15 @@
     [x] Proof of concept
     [x] Works with Swagger UI
     [x] Write to database
-    [ ] Reads from datbase
-    [ ] Is it's own module
+    [x] Reads from database
+    [x] Is it's own module
+    [ ] Require password to start session
 [ ] Authorization
     [ ] Record-level authorization
+[ ] Error logging
+    [ ] Filtering by module
+    [ ] Filtering by level
+    [ ] LogStash Friendly
 [ ] CORS
 [ ] class-transformer
 [ ] class-validator

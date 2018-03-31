@@ -22,7 +22,7 @@ export class JwtStrategy extends Strategy {
 
   public async verify(req: Request, payload: any, done: VerifiedCallback) {
     try {
-      const isValid = await this.authService.validateUser(payload);
+      const isValid = await this.authService.validateSession(payload);
       if (!isValid) {
         return done('Unauthorized', false);
       }

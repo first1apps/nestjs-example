@@ -10,7 +10,7 @@ export class AuthController {
   public async getToken() {
     const savedSession = await this.authService.startSession(123);
     const payload = { sid: savedSession.id };
-    const token = await this.authService.createToken(payload, savedSession.lifeSpanMinutes);
+    const token = await this.authService.createToken(payload, savedSession.expiresIn);
     return token;
   }
 
