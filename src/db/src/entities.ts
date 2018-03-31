@@ -1,1 +1,1 @@
-export { Photo } from'./photo/photo.entity';
+export { Photo } from './photo/photo.entity';

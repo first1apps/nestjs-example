@@ -5,7 +5,7 @@ import { Photo } from './photo.entity';
 @Controller('photo')
 export class PhotoController {
   constructor(private readonly photoService: PhotoService) {
-    console.log("New PhotoController");
+    console.log('New PhotoController');
   }
 
   @Get()
@@ -15,10 +15,9 @@ export class PhotoController {
 
   @Post()
   async create(@Body() photo: Photo): Promise<Photo> {
-    console.log("creating photo", photo);
+    console.log('creating photo', photo);
     return this.photoService.create(photo);
   }
-
 }
 
 /*{

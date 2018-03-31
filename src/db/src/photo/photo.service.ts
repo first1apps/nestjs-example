@@ -17,7 +17,7 @@ export class PhotoService {
   }
 
   async create(photo: DeepPartial<Photo>): Promise<any> {
-    console.log("Current Request Context", RequestContext.current());
+    console.log('Current Request Context', RequestContext.current());
     // return this.photoRepository.manager.transaction(async mgr => {
     //   let lastPhoto = null;
 
