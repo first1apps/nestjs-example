@@ -1,10 +1,19 @@
 
 ## TODO
 
-[ ] class-transformer: Don't allow additional properties to be set
-[ ] swagger: Models are not generated
-[ ] database: Use TypeORM
+```
+[ ] Swagger
+    [x] UI
+    [x] Simple Spec
+    [ ] Spec with models
+[ ] Typeorm
+    [x] Simple DI
+    [ ] Transactions
+[ ] Authentication
+[ ] class-transformer
+[ ] class-validator
 
+```
 
 ## Swagger
 
