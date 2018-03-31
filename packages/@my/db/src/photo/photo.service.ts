@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DeepPartial } from 'typeorm';
 import { Photo } from './photo.entity';
 import { range } from 'lodash';
+import { RequestContext } from '@my/api-shared';
 
 @Component()
 export class PhotoService {
@@ -16,12 +17,13 @@ export class PhotoService {
   }
 
   async create(photo: DeepPartial<Photo>): Promise<any> {
-    return this.photoRepository.manager.transaction(async mgr => {
-      let lastPhoto = null;
+    console.log("Current Request Context", RequestContext.current());
+    // return this.photoRepository.manager.transaction(async mgr => {
+    //   let lastPhoto = null;
 
-      const result = await Promise.all(range(100).map(async () => await this.photoRepository.save(photo)));
+    //   const result = await Promise.all(range(100).map(async () => await this.photoRepository.save(photo)));
 
-      return lastPhoto;
-    });
+    //   return lastPhoto;
+    // });
   }
 }

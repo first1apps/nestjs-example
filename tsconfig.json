@@ -2,16 +2,27 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
     "noLib": false,
-    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
     "allowJs": true,
-    "baseUrl": "."
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+        "*": [
+            "packages/*",
+            "node_modules/*"
+        ]
+    }
   },
   "include": [
     "packages/**/*"

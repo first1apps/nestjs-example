@@ -4,7 +4,9 @@ import { Photo } from './photo.entity';
 
 @Controller('photo')
 export class PhotoController {
-  constructor(private readonly photoService: PhotoService) {}
+  constructor(private readonly photoService: PhotoService) {
+    console.log("New PhotoController");
+  }
 
   @Get()
   async findAll(): Promise<Photo[]> {
