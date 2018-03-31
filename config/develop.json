@@ -5,7 +5,7 @@
     "dbConnection": {
         "host": "localhost",
         "port": "5432",
-        "user": "USER_HERE",
+        "username": "USER_HERE",
         "password": "PASSWORD_HERE",
         "database": "DATABASE_HERE",
         "ssl": true

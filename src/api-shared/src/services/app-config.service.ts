@@ -14,7 +14,7 @@ export class AppConfigService {
   dbConnection = {
     host: this.config.get<string>('dbConnection.host'),
     port: +this.config.get<number | string>('dbConnection.port'),
-    user: this.config.get<string>('dbConnection.user'),
+    username: this.config.get<string>('dbConnection.username'),
     password: this.config.get<string>('dbConnection.password'),
     database: this.config.get<string>('dbConnection.database'),
     ssl: notFalsey(this.config.get<any>('dbConnection.ssl')),

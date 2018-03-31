@@ -13,6 +13,7 @@
     [ ] Spec with models
 [ ] Typeorm
     [x] Simple DI
+    [ ] Get db config from AppConfig
     [ ] Transactions
     [ ] Created/Modified By/At audit columns
     [ ] Tables in Various Schema
