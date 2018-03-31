@@ -4,22 +4,28 @@ import { ApiSharedModule } from '@my/api-shared';
 import { AnimalModule } from '@my/animal-api-server';
 import * as config from 'config';
 import { DbModule } from '@my/db';
-import { RequestContextMiddleware } from 'nestjs-request-context';
 import { RequestContext } from '@my/api-shared';
-
+import { ZoneMiddleware } from 'nestjs-zone';
 @Module({
-  imports: [AnimalModule, DbModule],
-  controllers: [],
-  components: [...ApiSharedModule.rootProviders(config)],
+    imports: [AnimalModule, DbModule],
+    controllers: [],
+    components: [...ApiSharedModule.rootProviders(config)],
 })
 export class ApplicationModule implements NestModule {
-  configure(consumer: MiddlewaresConsumer) {
-    consumer
-      .apply(
-        RequestContextMiddleware.for<RequestContext>(RequestContext.zoneKey, (req, res) => {
-          return new RequestContext(req, res);
-        }),
-      )
-      .forRoutes({ path: '*' });
-  }
+    configure(consumer: MiddlewaresConsumer) {
+        consumer
+            .apply(
+                ZoneMiddleware.create<RequestContext>((req, res) => {
+                    const requestContext = new RequestContext(req, res);
+                    const nextZoneSpec: ZoneSpec = {
+                        name: RequestContext.zoneKey,
+                        properties: {
+                            [RequestContext.zoneKey]: requestContext,
+                        },
+                    };
+                    return nextZoneSpec;
+                }),
+            )
+            .forRoutes({ path: '*' });
+    }
 }

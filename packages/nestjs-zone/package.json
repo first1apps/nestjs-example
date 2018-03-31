@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-request-context",
+  "name": "nestjs-zone",
   "version": "0.8.0",
   "dependencies": {
     "zone.js": "^0.8.21"
