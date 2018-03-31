@@ -8,7 +8,10 @@ export class AuthController {
   @Post('token')
   @HttpCode(HttpStatus.OK)
   public async getToken() {
-    return await this.authService.createToken();
+    const savedSession = await this.authService.startSession(123);
+    const payload = { sid: savedSession.id };
+    const token = await this.authService.createToken(payload, savedSession.lifeSpanMinutes);
+    return token;
   }
 
   @Get('authorized')

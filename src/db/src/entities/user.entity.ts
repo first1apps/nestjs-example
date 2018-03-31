@@ -8,6 +8,12 @@ export class User {
   username: string = '';
 
   @Column('text', { nullable: false })
+  email: string = '';
+
+  @Column('text', { nullable: true })
+  passwordHash: string | null = null;
+
+  @Column('text', { nullable: false })
   firstName: string = '';
 
   @Column('text', { nullable: false })
@@ -16,7 +22,7 @@ export class User {
   @Column('text', { nullable: false })
   lastName: string = '';
 
-  @Column('timestamptz', { nullable: true })
+  @Column('date', { nullable: true })
   dateOfBirth: Date | null = null;
 
   @Column('text', { nullable: true })

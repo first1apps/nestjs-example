@@ -3,10 +3,11 @@ import { AppConfigService } from '@my/api-shared';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as config from 'config';
 import * as e from './entities';
+import { DbService } from './db.service';
 
 const dbConnection: any = config.get('dbConnection'); // TODO This should come from the AppConfigService but dunno how
 
-const entities = [e.Photo, e.User];
+const entities = [e.Photo, e.User, e.Session];
 
 const rootTypeormModule = TypeOrmModule.forRoot({
   type: 'postgres',
@@ -22,10 +23,12 @@ const rootTypeormModule = TypeOrmModule.forRoot({
   entities: entities,
 });
 
-const featureModules = TypeOrmModule.forFeature(entities);
+const featureTypeormModules = TypeOrmModule.forFeature(entities);
+
 
 @Module({
-  imports: [rootTypeormModule, featureModules],
-  exports: [rootTypeormModule, featureModules],
+  imports: [rootTypeormModule, featureTypeormModules],
+  components: [DbService],
+  exports: [DbService, rootTypeormModule, featureTypeormModules],
 })
 export class DbModule {}

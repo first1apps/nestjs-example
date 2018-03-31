@@ -8,6 +8,8 @@ export class AppConfigService {
   appVersion = this.config.get<string>('appVersion');
   port = +this.config.get<number | string>('port');
   jwtSecret = this.config.get<string>('jwtSecret');
+  defaultSessionMinutes = +this.config.get<number | string>('defaultSessionMinutes');
+  allowDbStructureSync = this.config.has('allowDbStructureSync') && this.config.get<boolean>('allowDbStructureSync') === true;
 
   dbConnection = {
     host: this.config.get<string>('dbConnection.host'),

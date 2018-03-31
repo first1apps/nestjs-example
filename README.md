@@ -14,9 +14,14 @@
 [ ] Typeorm
     [x] Simple DI
     [ ] Transactions
+    [ ] Created/Modified By/At audit columns
+    [ ] Tables in Various Schema
+    [ ] Ensure tables with the same name in different shcemas don't conflict
+    [ ] Use new Date objects that ignore timezone
 [ ] Authentication
     [x] Proof of concept
-    [ ] Works with Swagger UI
+    [x] Works with Swagger UI
+    [x] Write to database
     [ ] Reads from datbase
     [ ] Is it's own module
 [ ] Authorization
