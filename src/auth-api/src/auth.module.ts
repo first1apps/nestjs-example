@@ -9,9 +9,10 @@ import { AuthService } from './auth.service';
 import { JwtStrategy } from './passport/jwt.strategy';
 import { AuthController } from './auth.controller';
 import { ApiSharedModule } from '@my/api-shared';
+import { DbModule } from '@my/db';
 
 @Module({
-  imports: [ApiSharedModule],
+  imports: [ApiSharedModule, DbModule],
   components: [AuthService, JwtStrategy],
   controllers: [AuthController],
 })

@@ -35,7 +35,7 @@ function setupSwagger(app: INestApplication, appConfig: AppConfigService) {
     },
   };
 
-  (document as any)['security'] = { 'jwt-auth': [] };
+  (document as any)['security'] = [{ 'jwt-auth': [] }];
 
   SwaggerModule.setup('/.swagger/ui', app, document);
   app.use('/.swagger/json', (req, res, next) => res.send(document));

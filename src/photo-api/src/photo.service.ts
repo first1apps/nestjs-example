@@ -1,7 +1,7 @@
 import { Component } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DeepPartial } from 'typeorm';
-import { Photo } from './photo.entity';
+import { Photo } from '@my/db';
 import { range } from 'lodash';
 import { RequestContext } from '@my/api-shared';
 

@@ -1,5 +1,4 @@
 import { Module, MiddlewaresConsumer, NestModule } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ApiSharedModule } from '@my/api-shared';
 import { AnimalModule } from '@my/animal-api-server';
 import * as config from 'config';
@@ -7,10 +6,20 @@ import { DbModule } from '@my/db';
 import { RequestContext } from '@my/api-shared';
 import { AuthModule } from '@my/auth-api';
 import { ZoneMiddleware } from 'nestjs-zone';
+import { PhotoModule } from '@my/photo-api';
 
 @Module({
-  imports: [AnimalModule, AuthModule, DbModule, ApiSharedModule],
-  exports: [ApiSharedModule],
+  imports: [
+    // Shared Modules
+    ApiSharedModule,
+    DbModule,
+
+    // Controller Modules
+    AnimalModule,
+    AuthModule,
+    PhotoModule,
+  ],
+  exports: [ApiSharedModule, DbModule],
 })
 export class ApplicationModule implements NestModule {
   configure(consumer: MiddlewaresConsumer) {

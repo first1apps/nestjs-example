@@ -15,8 +15,8 @@
     "target": "es6",
     "sourceMap": true,
     "allowJs": true,
-    "rootDir": "src",
-    "baseUrl": "src",
+    "rootDir": ".",
+    "baseUrl": ".",
     "paths": {
         "@my/*": [
             "src/*"
