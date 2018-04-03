@@ -7,7 +7,7 @@ import { DbService } from './db.service';
 import { DbConnectionOptions } from './db-connection-options';
 import { ConnectionOptions as TypeOrmConnectionOptions } from 'typeorm';
 
-const entities = [e.Photo, e.User, e.Session];
+const entities = [e.Photo, e.User, e.Session, e.Coverage, e.Patient];
 const featureTypeormModules = TypeOrmModule.forFeature(entities);
 
 @Module({
